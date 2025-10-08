@@ -1,1 +1,26 @@
-# virtuoso-watdiv
+Download an decompress watdiv data:
+```
+wget https://dsg.uwaterloo.ca/watdiv/watdiv.10M.tar.bz2
+tar -xvjf watdiv.10M.tar.bz2 -C ./data
+```
+
+Start up the container in the background:
+```
+ docker compose up -d
+```
+
+Load data by entering the containers interactive SQL and SPARQL command-line client (ISQL):
+```
+docker exec -it watdiv-virtuoso isql 1111 dba dba
+```
+
+Then run:
+```
+LD_DIR('/data', 'watdiv.10M.nt', 'http://graph/watdiv');
+rdf_loader_run();
+checkpoint();
+SPARQL SELECT (COUNT(*) AS ?triples) WHERE { GRAPH <http://graph/watdiv> { ?s ?p ?o } };
+```
+to load `watdiv.10M.nt` into the the database into the graph `http://graph/watdiv`.
+
+The database will be stored in `./database/virtuoso.db` on the host and will persist even if the Virtuoso container is removed.
