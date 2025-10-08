@@ -20,6 +20,7 @@ LD_DIR('/data', 'watdiv.10M.nt', 'http://graph/watdiv');
 rdf_loader_run();
 checkpoint();
 SPARQL SELECT (COUNT(*) AS ?triples) WHERE { GRAPH <http://graph/watdiv> { ?s ?p ?o } };
+exit;
 ```
 to load `watdiv.10M.nt` into the the database into the graph `http://graph/watdiv`.
 
