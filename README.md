@@ -14,7 +14,7 @@ Load data by entering the containers interactive SQL and SPARQL command-line cli
 docker exec -it watdiv-virtuoso isql 1111 dba dba
 ```
 
-Then run:
+Then run the following, one line at a time:
 ```
 LD_DIR('/data', 'watdiv.10M.nt', 'http://watdiv.org');
 rdf_loader_run();
