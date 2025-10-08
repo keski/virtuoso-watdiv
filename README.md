@@ -22,6 +22,6 @@ checkpoint();
 SPARQL SELECT (COUNT(*) AS ?triples) WHERE { GRAPH <http://graph/watdiv> { ?s ?p ?o } };
 exit;
 ```
-to load `watdiv.10M.nt` into the the database into the graph `http://graph/watdiv`.
+to load `watdiv.10M.nt` into the graph `http://graph/watdiv`.
 
 The database will be stored in `./database/virtuoso.db` on the host and will persist even if the Virtuoso container is removed.
