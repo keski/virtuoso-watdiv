@@ -16,12 +16,12 @@ docker exec -it watdiv-virtuoso isql 1111 dba dba
 
 Then run:
 ```
-LD_DIR('/data', 'watdiv.10M.nt', 'http://graph/watdiv');
+LD_DIR('/data', 'watdiv.10M.nt', 'http://watdiv.org');
 rdf_loader_run();
 checkpoint();
-SPARQL SELECT (COUNT(*) AS ?triples) WHERE { GRAPH <http://graph/watdiv> { ?s ?p ?o } };
+SPARQL SELECT (COUNT(*) AS ?triples) WHERE { GRAPH <http://watdiv.org> { ?s ?p ?o } };
 exit;
 ```
-to load `watdiv.10M.nt` into the graph `http://graph/watdiv`.
+to load `watdiv.10M.nt` into the graph `http://watdiv.org`.
 
 The database will be stored in `./database/virtuoso.db` on the host and will persist even if the Virtuoso container is removed.
