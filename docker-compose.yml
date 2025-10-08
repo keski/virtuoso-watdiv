@@ -1,0 +1,11 @@
+services:
+  virtuoso:
+    image: openlink/virtuoso-opensource-7:latest
+    container_name: watdiv-virtuoso
+    ports:
+      - "8890:8890"
+      - "1111:1111"
+    volumes:
+      - ./data:/data
+      - ./database:/database
+      - ./virtuoso.ini:/opt/virtuoso-opensource/database/virtuoso.ini
