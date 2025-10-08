@@ -1,4 +1,4 @@
-Download an decompress watdiv data:
+Download and decompress the watdiv data:
 ```
 wget https://dsg.uwaterloo.ca/watdiv/watdiv.10M.tar.bz2
 tar -xvjf watdiv.10M.tar.bz2 -C ./data
